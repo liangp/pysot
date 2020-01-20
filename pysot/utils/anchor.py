@@ -1,6 +1,6 @@
 # Copyright (c) SenseTime. All Rights Reserved.
 
-from __future__ import absolute_import 
+from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -11,6 +11,7 @@ import numpy as np
 
 from pysot.utils.bbox import corner2center, center2corner
 
+
 class Anchors:
     """
     This class generate anchors.
@@ -19,8 +20,8 @@ class Anchors:
         self.stride = stride
         self.ratios = ratios
         self.scales = scales
-        self.image_center = 0
-        self.size = 0
+        self.image_center = image_center
+        self.size = size
 
         self.anchor_num = len(self.scales) * len(self.ratios)
 
@@ -64,7 +65,8 @@ class Anchors:
         x2 = zero_anchors[:, 2]
         y2 = zero_anchors[:, 3]
 
-        x1, y1, x2, y2 = map(lambda x: x.reshape(self.anchor_num, 1, 1), [x1, y1, x2, y2])
+        x1, y1, x2, y2 = map(lambda x: x.reshape(self.anchor_num, 1, 1),
+                             [x1, y1, x2, y2])
         cx, cy, w, h = corner2center([x1, y1, x2, y2])
 
         disp_x = np.arange(0, size).reshape(1, 1, -1) * self.stride
@@ -81,5 +83,3 @@ class Anchors:
         self.all_anchors = (np.stack([x1, y1, x2, y2]).astype(np.float32),
                             np.stack([cx, cy, w,  h]).astype(np.float32))
         return True
-
-

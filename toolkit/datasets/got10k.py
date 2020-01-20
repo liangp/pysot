@@ -1,10 +1,8 @@
 
 import json
 import os
-import numpy as np
 
 from tqdm import tqdm
-from glob import glob
 
 from .dataset import Dataset
 from .video import Video

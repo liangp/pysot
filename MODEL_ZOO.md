@@ -18,13 +18,15 @@ This file documents a large collection of baselines trained with pysot. All conf
 |  <sub>siammask_r50_l3</sub>        | <sub>0.455/0.634/0.219</sub> | <sub>0.423/0.615/0.248</sub> | <sub>0.283/0.597/0.461</sub> |            -        |         -        | <sub>56</sub>  | [link](https://drive.google.com/open?id=1YbPUQVTYw_slAvk_DchvRY-7B6rnSXP9) |
 |  <sub>siamrpn_r50_l234_dwxcorr_lt</sub>  |              -               |             -                | - |            -        | <sub>0.629</sub> | <sub>20</sub>  | [link](https://drive.google.com/open?id=1lOOTedwGLbGZ7MAbqJimIcET3ANJd29A) |
 
+The models can also be downloaded from [Baidu Yun](https://pan.baidu.com/s/1GB9-aTtjG57SebraVoBfuQ) Extraction Code: j9yb
+
 Note:
 
 - speed tested on GTX-1080Ti
 - `alex` denotes [AlexNet](https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks), `r50_lxyz` denotes the outputs of stage x, y, and z in [ResNet-50](https://arxiv.org/abs/1512.03385), and `mobilev2` denotes [MobileNetV2](https://arxiv.org/abs/1801.04381).
 - `dwxcorr` denotes Depth-wise Cross Correlation. See more in [SiamRPN++ Section 3.4](https://arxiv.org/abs/1812.11703).
 - The suffixes `otb` and `lt` are designed for the [OTB](http://cvlab.hanyang.ac.kr/tracker_benchmark/benchmark.html) and [VOT long-term tracking challenge](http://www.votchallenge.net/vot2018/), the default (without suffix) is designed for [VOT short-term tracking challenge](http://www.votchallenge.net/index.html).
-
+- All above models are trained on VID,YoutubeBB,COCO,ImageNetDet which are the same as DaSiamRPN.
 
 ### Video Object Segmentation Baselines
 
